@@ -11,7 +11,7 @@ const ContainerS = styled.main`
   margin-left: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   background-color: #edecd1;
 
@@ -42,7 +42,25 @@ input{
     height:2rem;
     border:none;
     padding: 0 0 0 5px;
-    border-radius: 20px 0 20px 0;
+    border-radius: 10px;
+}
+
+button{
+    margin-top:1rem;
+    padding:5px 10px 5px 10px;
+    font-weight: bold;
+    background-color: #2F4699;
+    border-radius: 10px;
+    color:white;
+    
+}
+
+button:hover{
+    background-color: transparent;
+    cursor:pointer;
+    color:black;
+   
+
 }
 
 `;
