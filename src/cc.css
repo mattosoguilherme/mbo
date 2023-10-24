@@ -2,4 +2,5 @@ img {
     align-items: center;
     margin-bottom: 1rem;
     font-weight: bold;
+    border-color: black;
 }

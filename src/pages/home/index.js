@@ -1,26 +1,26 @@
-import ContainerS from "../style";
+import { ContainerH } from "../style";
 import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <>
-      <ContainerS>
+      <ContainerH>
         <Link to={"/catalogo"}>
-          <button> catalogo </button>
+          <button> CATALOGO </button>
         </Link>
 
         <Link to={"/pedido"}>
-          <button> pedido </button>
+          <button> PEDIDO </button>
         </Link>
 
         <Link to={"/dashboard"}>
-          <button> dashboard </button>
+          <button> DASHBOARD </button>
         </Link>
 
         <Link to={"/cliente"}>
-          <button> cliente </button>
+          <button> CLIENTE </button>
         </Link>
-      </ContainerS>
+      </ContainerH>
     </>
   );
 };
