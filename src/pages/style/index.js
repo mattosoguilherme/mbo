@@ -16,7 +16,7 @@ const ContainerS = styled.main`
   background-color: #edecd1;
 
   @media (max-width: 420px) {
-    height: 80vh;
+    
   }
 
   img {
@@ -101,4 +101,27 @@ button:hover{
 
 `;
 
+export const TableS = styled.table`
+width:100%;
+
+thead th{
+  background-color:#756DD4;
+  border:none
+}
+thead tr{
+  background-color:#756DD4;
+  borde-color:#756DD4;
+}
+
+`
+export const NavS = styled.nav`
+background-color:#08348C !important;
+color:#08348C;
+
+#cor{
+  color:#08348C !important;
+  text-decoration:none !important;
+}
+
+`
 export default ContainerS;
