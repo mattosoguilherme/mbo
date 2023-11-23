@@ -1,10 +1,12 @@
 import NavP from "../../components/navbar";
-import ContainerS, { TableS } from "../style";
+import { ContainerP, TableS, ButtonP } from "../style";
 const Pedido = () => {
   return (
     <>
-      <NavP/>
-      <ContainerS>
+      <NavP />
+      <ContainerP>
+        <ButtonP id="passada">+ pedido</ButtonP>
+
         <TableS className="table">
           <thead>
             <tr>
@@ -46,7 +48,7 @@ const Pedido = () => {
             </tr>
           </tbody>
         </TableS>
-      </ContainerS>
+      </ContainerP>
     </>
   );
 };

@@ -5,6 +5,7 @@ import Pedido from "./pages/pedido";
 import Catalogo from "./pages/catalogo";
 import Dashboard from "./pages/dashboard";
 import Cliente from "./pages/cliente";
+import CadastroItem from "./pages/catalogo/cadastro";
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/pedido" element={<Pedido />} />
           <Route path="/catalogo" element={<Catalogo />} />
+          <Route path="/catalogo/cadastro" element={<CadastroItem />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/cliente" element={<Cliente />} />
         </Routes>

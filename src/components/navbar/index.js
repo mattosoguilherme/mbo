@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
+import { NavS } from "../../pages/style";
+
 const NavP = () => {
   return (
     <>
-      <nav className="navbar navbar-dark fixed-top">
+      <NavS className="navbar fixed-top">
         <div className="container-fluid">
-          <a id="cor" href="#">
+          <a about="logo" href="#">
             MBO
           </a>
           <button
@@ -23,12 +26,12 @@ const NavP = () => {
             aria-labelledby="offcanvasDarkNavbarLabel"
           >
             <div className="offcanvas-header">
-              <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
+              <h3 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
                 Menu
-              </h5>
+              </h3>
               <button
                 type="button"
-                className="btn-close btn-close-white"
+                className="btn-close btn-close-black"
                 data-bs-dismiss="offcanvas"
                 aria-label="Close"
               ></button>
@@ -36,42 +39,40 @@ const NavP = () => {
             <div className="offcanvas-body">
               <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
+                  <Link to={"/home"} className="nav-link">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Link
-                  </a>
+                  <Link to={"/pedido"} className="nav-link">
+                    Pedidos
+                  </Link>
                 </li>
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Dropdown
-                  </a>
+                <li className="nav-item">
+                  <Link to={"/catalogo"} className="nav-link">
+                    Catalogo
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to={"/dashboard"} className="nav-link">
+                    Dashboard
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to={"/cliente"} className="nav-link">
+                    Clientes
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to={"/"} className="nav-link">
+                    Sair
+                  </Link>
                 </li>
               </ul>
-              <form className="d-flex mt-3" role="search">
-                <input
-                  className="form-control me-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button className="btn btn-success" type="submit">
-                  Search
-                </button>
-              </form>
             </div>
           </div>
         </div>
-      </nav>
+      </NavS>
     </>
   );
 };

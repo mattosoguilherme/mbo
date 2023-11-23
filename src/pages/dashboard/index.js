@@ -1,5 +1,13 @@
+import NavP from "../../components/navbar";
+import ContainerS from "../style";
+
 const Dashboard = () => {
-    // function body goes here
+    return (
+        <>
+          <NavP />
+          <ContainerS></ContainerS>
+        </>
+      );
 }
 
 export default Dashboard;
