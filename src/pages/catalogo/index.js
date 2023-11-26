@@ -25,7 +25,7 @@ const Catalogo = () => {
     }
 
     GetUser();
-  }, []);
+  }, [logged]);
 
   return (
     <>

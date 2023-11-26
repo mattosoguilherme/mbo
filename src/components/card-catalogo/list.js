@@ -23,7 +23,17 @@ const ListCard = () => {
         .catch((e) => {});
     }
     GetList();
-  }, []);
+  }, [logged]);
+
+  catalogo.sort(function (a, b) {
+    if (a.id > b.id) {
+      return 1;
+    }
+    if (a.id < b.id) {
+      return -1;
+    }
+    return 0;
+  });
 
   return (
     <>
@@ -34,9 +44,9 @@ const ListCard = () => {
       )}
       {logged && (
         <ContainerList>
-         {catalogo.map((item) => ( 
-          <Cardcatalogo data={item} key={item.id} />
-         ))}
+          {catalogo.map((item) => (
+            <Cardcatalogo data={item} key={item.id} />
+          ))}
         </ContainerList>
       )}
     </>

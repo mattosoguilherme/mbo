@@ -1,15 +1,21 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import ContainerS, { ContainerCad, ContainerH, FormCad } from "../style";
+import { ContainerCad, ContainerH, FormCad, H1S } from "../style";
 import NavP from "../../components/navbar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CadastroItem = () => {
   const [logged, setLogged] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setLogged(false);
+    }
+
     const config = {
-      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      headers: { Authorization: `Bearer ${token}` },
     };
 
     async function GetUser() {
@@ -26,7 +32,34 @@ const CadastroItem = () => {
     GetUser();
   }, []);
 
- 
+  const HandleSubmit = (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setLogged(false);
+    }
+
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+
+    const item = {
+      fornecedor: e.target.fornecedor.value,
+      img: e.target.img.value,
+      modelo: e.target.modelo.value,
+      cor: e.target.cor.value,
+      grade: e.target.grade.value,
+      custo: Number(e.target.custo.value),
+      venda: Number(e.target.venda.value),
+    };
+    axios
+      .post("/catalogo", item, config)
+      .then((r) => {
+        console.log(r);
+        navigate("/catalogo");
+      })
+      .catch((e) => console.error(e));
+  };
 
   return (
     <>
@@ -42,18 +75,20 @@ const CadastroItem = () => {
         <>
           <NavP />
           <ContainerCad>
-            <h1>CADASTRO ITEM</h1>
+            <H1S>CADASTRO ITEM</H1S>
 
-            <script>$("#custo").maskMoney()</script>
-
-            <FormCad>
-              <input id="imagem" placeholder="imagem" />
-              <input id="fornecedor" placeholder="fornecedor" />
-              <input id="modelo" placeholder="modelo" />
-              <input id="cor" placeholder="cor" />
-              <input id="grade" placeholder="grade" />
-              <input type="text"  id="custo" placeholder="custo" />
-              <input id="venda" placeholder="venda" />
+            <FormCad method="POST" onSubmit={HandleSubmit}>
+              <input name="img" id="img" placeholder="imagem" />
+              <input
+                name="fornecedor"
+                id="fornecedor"
+                placeholder="fornecedor"
+              />
+              <input name="modelo" id="modelo" placeholder="modelo" />
+              <input name="cor" id="cor" placeholder="cor" />
+              <input name="grade" id="grade" placeholder="grade" />
+              <input name="custo" id="custo" placeholder="custo" />
+              <input name="venda" id="venda" placeholder="venda" />
 
               <div>
                 <Link to={"/catalogo"}>

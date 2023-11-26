@@ -6,6 +6,7 @@ import Catalogo from "./pages/catalogo";
 import Dashboard from "./pages/dashboard";
 import Cliente from "./pages/cliente";
 import CadastroItem from "./pages/catalogo/cadastro";
+import EditCatalogo from "./pages/catalogo/edit";
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/pedido" element={<Pedido />} />
           <Route path="/catalogo" element={<Catalogo />} />
+          <Route path="/catalogo/:id" element={<EditCatalogo />} />
           <Route path="/catalogo/cadastro" element={<CadastroItem />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/cliente" element={<Cliente />} />

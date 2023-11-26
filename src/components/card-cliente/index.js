@@ -4,6 +4,7 @@ const CardCliente = () => {
   return (
     <>
       <CardCli>
+        <h3> ADMIN </h3>
         <h4> Guilherme Mattoso</h4>
         <h4> (11) 99276-7398 </h4>
 
