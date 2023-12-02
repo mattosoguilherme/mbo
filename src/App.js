@@ -7,6 +7,7 @@ import Dashboard from "./pages/dashboard";
 import Cliente from "./pages/cliente";
 import CadastroItem from "./pages/catalogo/cadastro";
 import EditCatalogo from "./pages/catalogo/edit";
+import EditClient from "./pages/cliente/edit";
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
           <Route path="/pedido" element={<Pedido />} />
           <Route path="/catalogo" element={<Catalogo />} />
           <Route path="/catalogo/:id" element={<EditCatalogo />} />
+          <Route path="/cliente/:id" element={<EditClient />} />
           <Route path="/catalogo/cadastro" element={<CadastroItem />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/cliente" element={<Cliente />} />

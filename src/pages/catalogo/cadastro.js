@@ -55,7 +55,7 @@ const CadastroItem = () => {
     axios
       .post("/catalogo", item, config)
       .then((r) => {
-        console.log(r);
+
         navigate("/catalogo");
       })
       .catch((e) => console.error(e));

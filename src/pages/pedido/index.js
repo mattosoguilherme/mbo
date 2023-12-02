@@ -5,7 +5,7 @@ const Pedido = () => {
     <>
       <NavP />
       <ContainerP>
-        <ButtonP id="passada">+ pedido</ButtonP>
+        <ButtonP >+ pedido</ButtonP>
 
         <TableS className="table">
           <thead>

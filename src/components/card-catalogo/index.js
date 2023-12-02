@@ -27,7 +27,7 @@ const Cardcatalogo = (props) => {
         <nav>
           <button
             type="button"
-            className="btn btn-primary excluir"
+            className="excluir"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
           >

@@ -1,16 +1,34 @@
 import { CardCli } from "../../pages/style";
+import { Link } from "react-router-dom";
 
-const CardCliente = () => {
+const CardCliente = (props) => {
+  const cliente = props.data;
+
   return (
     <>
       <CardCli>
-        <h3> ADMIN </h3>
-        <h4> Guilherme Mattoso</h4>
-        <h4> (11) 99276-7398 </h4>
+        {cliente.User.role == "ADMIN" ? (
+          <>
+            <h3> ADMIN </h3>
+          </>
+        ) : (
+          <>
+            <h3> {cliente.User.nome} </h3>
+          </>
+        )}
+
+        <h4> {cliente.nome}</h4>
+        <h4> {cliente.contato} </h4>
 
         <div>
-          <button> EDITAR</button>
-          <button> EXCLUIR</button>
+          {/* interrogação é para se for verdade. os dois ponto é para se for mentira */}
+          {cliente.id && (
+            <>
+              <Link to={`/cliente/${cliente.id}`}>
+                <button type="button">EDITAR</button>
+              </Link>
+            </>
+          )}
         </div>
       </CardCli>
     </>

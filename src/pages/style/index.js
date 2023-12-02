@@ -57,6 +57,24 @@ export const ContainerCad = styled.main`
   .card {
     width: 12rem;
   }
+
+  .excluir {
+    margin-top: 1rem;
+    padding: 5px 10px 5px 10px;
+    font-weight: bold;
+    background-color: #a62626;
+    border-radius: 10px;
+    color: white;
+    width: 25rem;
+
+    @media (max-width: 420px) {
+      width: 100%;
+    }
+  }
+
+  .excluir:hover {
+    background-color: #260606;
+  }
 `;
 
 export const H1S = styled.h1`
@@ -126,7 +144,7 @@ export const ContainerH = styled.main`
 export const ButtonP = styled.button`
   width: 10rem;
   height: 4rem;
-  background-color: #2f4699;
+  background-color: #025939;
   border-radius: 5px;
   align-items: center;
   color: #edecd1;
@@ -135,8 +153,7 @@ export const ButtonP = styled.button`
   margin-top: 5rem;
 
   &:hover {
-    background: transparent;
-    color: black;
+    background: #01402E;
   }
 `;
 
@@ -193,6 +210,17 @@ export const FormCad = styled.form`
     height: 2.5rem;
     border-radius: 10px;
     padding-left: 0.2rem;
+    border: solid;
+    border-color: grey;
+  }
+
+  select {
+    margin-bottom: 0.5rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    padding-left: 0.2rem;
+    border: solid;
+    border-color: grey;
   }
 
   div {
@@ -210,9 +238,8 @@ export const FormCad = styled.form`
     width: 8rem;
   }
   button:hover {
-    background-color: transparent;
+    background-color: #081a40;
     cursor: pointer;
-    color: black;
   }
 
   img {
@@ -363,11 +390,16 @@ export const CardCat = styled.div`
 
 export const CardCli = styled.div`
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
-  width: 15em;
-  padding: 1rem;
+  width: 15rem;
+  padding: 0.5rem;
   border-radius: 10px;
   background-color: #2f4699;
   color: #edecd1;
+  margin-bottom: 1rem;
+
+  @media (max-width: 420px) {
+    width: 10rem;
+  }
 
   button {
     margin-top: 1rem;
@@ -376,6 +408,11 @@ export const CardCli = styled.div`
     background-color: #2f4699;
     border-radius: 10px;
     color: white;
+
+    @media (max-width: 420px) {
+      width: 4rem;
+      font-size: 0.6rem;
+    }
   }
 
   button:hover {
@@ -394,6 +431,11 @@ export const CardCli = styled.div`
     background-color: #edecd1;
     text-align: center;
     border-radius: 10px;
+    font-size: 0.9rem;
+  }
+
+  h4 {
+    font-size: 0.9rem;
   }
 `;
 
